@@ -49,11 +49,11 @@ export class DelayInput extends React.PureComponent {
     this.isDebouncing = false;
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.createNotifier(this.props);
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentDidUpdate(prevProps, _prevState, _snapshot) {
     if (this.isDebouncing) {
       return;
     }
@@ -63,25 +63,28 @@ export class DelayInput extends React.PureComponent {
       leadingNotify: leadingNotifyNext,
       trailingNotify: trailingNotifyNext,
       value: valueNext,
-    } = nextProps;
-    if (typeof valueNext !== 'undefined' && this.state.value !== valueNext) {
-      this.setState({
-        value: valueNext
-      });
-    }
+    } = this.props;
     const {
       delayMax,
       delayTimeout,
       leadingNotify,
       trailingNotify,
-    } = this.props;
+      value,
+    } = prevProps;
+    
+    if (typeof valueNext !== 'undefined' && value !== valueNext) {
+      this.setState({
+        value: valueNext
+      });
+    }
+    
     if (
       delayMax !== delayMaxNext ||
       delayTimeout !== delayTimeoutNext ||
       leadingNotify !== leadingNotifyNext ||
       trailingNotify !== trailingNotifyNext
     ) {
-      this.createNotifier(nextProps);
+      this.createNotifier(this.props);
     }
   }
 

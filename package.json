@@ -1,6 +1,6 @@
 {
   "name": "react-delay-input",
-  "version": "4.0.4",
+  "version": "4.1.0",
   "description": "React component that renders an Input with delayed onChange",
   "main": "lib/index.js",
   "config": {
@@ -27,7 +27,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/waynebloss/react-delay-input.git"
+    "url": "https://github.com/gencer/react-delay-input.git"
   },
   "keywords": [
     "component",
@@ -38,12 +38,16 @@
     "delay",
     "throttle"
   ],
-  "author": "Wayne Bloss <waynebloss@gmail.com>",
+  "author": "Gencer W. Genç <gencer@nienbo.co.uk>",
+  "contributors": [
+	"Wayne Bloss <waynebloss@gmail.com>",
+	"Gencer W. Genç <gencer@nienbo.co.uk>"
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/waynebloss/react-delay-input/issues"
+    "url": "https://github.com/gencer/react-delay-input/issues"
   },
-  "homepage": "https://github.com/waynebloss/react-delay-input",
+  "homepage": "https://github.com/gencer/react-delay-input",
   "peerDependencies": {
     "react": "^15.3.0 || ^16.0.0"
   },
